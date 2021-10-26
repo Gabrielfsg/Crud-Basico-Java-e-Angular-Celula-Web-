@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--Dependencia do liquibase-->
+
+    <!--criação da tabela pessoa-->
+    <changeSet id="202105181700-1" author="gabriel">
+          <createTable tableName="pessoa" remarks="Tabela levando os dados de pessoa"> <!--cria a tabela com o nome de pessoa-->
+            <column name="codigo_pessoa" remarks="Um inteiro, chave primária" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/><!--comando que da o atributo: nome_pessoa as-->
+            </column>                                                 <!--  qualidades de uma chave primaria-->
+              <column name="nome_pessoa" remarks="Uma string, que armazena o nome de pessoa" type="varchar(50)"><!-- nome e o tipo de atribut-->
+                  <constraints nullable="false"/><!--comando que da o atributo: nome_pessoa as-->
+              </column>
+              <column name="apelido_pessoa" remarks="Uma String que armazena o apelido da pessoa" type="varchar(50)">
+                <constraints nullable="false"/> <!-- comando faz com que o atributo receba not null como caracteristica-->
+            </column>
+            <column name="time_pessoa" remarks="Uma String que armazena o time da pessoa" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cpf_pessoa" remarks="Uma String que armazena o cpf da pessoa" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hobbie_pessoa" remarks="Uma String que armazena o hobbie da pessoa" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cidade_pessoa"  remarks="um int,chave estrangeira que recebe o código da cidade" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+            </changeSet>
+
+
+    <!--criação da chave estrangeira-->
+    <changeSet id="202105181700-3" author="gabriel">
+        <!--faz com que o atributo cidade_pessoa receba os dados de nome_cidade tendo
+        assim uma chave estrangeira -->
+        <addForeignKeyConstraint baseTableName="pessoa"
+                                 baseColumnNames="cidade_pessoa"
+                                 constraintName="fk_pessoa2cidade"
+                                 referencedTableName="cidade"
+                                 referencedColumnNames="codigo_cidade"/>
+    </changeSet>
+
+        </databaseChangeLog>

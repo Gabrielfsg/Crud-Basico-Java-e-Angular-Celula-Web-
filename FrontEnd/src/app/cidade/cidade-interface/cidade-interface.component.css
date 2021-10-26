@@ -1,0 +1,9 @@
+.p-datatable-gridlines::ng-template td{
+  text-align: center!important;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+p{
+  text-align: center;
+}

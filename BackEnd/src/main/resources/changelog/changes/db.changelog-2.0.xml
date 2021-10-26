@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--Dependencia do liquibase-->
+
+    <!--criação da tabela cidade-->
+    <changeSet id="202105181700-2" author="gabriel"><!-- criação d unidade de mudança do bd-->
+        <createTable tableName="cidade" remarks="tabela cidade"><!--cria a tabela com o nome de cidade-->
+            <column name="codigo_cidade" type="int" autoIncrement="true" remarks="um int, chave primaria(auto incrementado) que referência a chave estrangeira: cidade_pessoa">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome_cidade" remarks="Uma String que leva o nome da cidade" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="habitantes_cidade" remarks="um inteiro que leva a quantidade de habitantes da cidade" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome_estado" remarks="uma String que leva o nome do estado" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+
+
+</databaseChangeLog>

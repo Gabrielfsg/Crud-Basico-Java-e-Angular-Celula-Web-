@@ -1,0 +1,27 @@
+<div class="container">
+<div class="p-grid">
+  <div class="p-col-12">
+  <h1>Cadastro de Cidade</h1>
+</div>
+<div class="p-col-12 p-fluid">
+  <label>Nome</label>
+  <input type="text" pInputText [(ngModel)]="cidade.nomeCidade">
+</div>
+<div class="p-col-12 p-fluid">
+  <label>Habitantes</label>
+  <input type="text" pInputText [(ngModel)]="cidade.habitantesCidade">
+</div>
+<div class="p-col-12 p-fluid">
+  <label>Estado</label>
+  <span class="p-float-label">
+    <p-dropdown inputId="dropdown" placeholder="Selecione" [options]="estado" optionLabel="nomeE" optionValue="nomeE" [(ngModel)]="cidade.nomeEstado"></p-dropdown>
+</span>
+</div>
+<div class="p-col-2">
+  <button pButton type="button" label="Cadastrar nova Cidade" (click)="cadastrarCidade()"></button>
+</div>
+<div class="p-col-2">
+  <button pButton type="button" label="Voltar para Cidade Interface" (click)="voltarCidadeInterface()"></button>
+</div>
+</div>
+</div>

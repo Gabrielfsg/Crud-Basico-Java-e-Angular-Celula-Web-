@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="p-grid">
+    <div class="p-col-12">
+    <h1>Edição de Pessoa. ID: {{id}}</h1>
+  </div>
+  <div class="p-col-12 p-fluid">
+    <label>Nome</label>
+    <input type="text" pInputText [(ngModel)]='pessoa.nomePessoa'>
+  </div>
+  <div class="p-col-12 p-fluid">
+    <label>Apelido</label>
+    <input type="text" pInputText [(ngModel)]='pessoa.apelidoPessoa'>
+  </div>
+  <div class="p-col-12 p-fluid">
+    <label>Time</label>
+    <input type="text" pInputText [(ngModel)]='pessoa.timePessoa'>
+  </div>
+  <div class="p-col-12 p-fluid">
+    <label>CPF</label>
+    <input type="text" pInputText [(ngModel)]='pessoa.cpfPessoa'>
+  </div>
+  <div class="p-col-12 p-fluid">
+    <label>Hobbie</label>
+    <input type="text" pInputText [(ngModel)]='pessoa.hobbiePessoa'>
+  </div>
+  <div class="p-col-12 p-fluid">
+    <label>Cidade</label>
+    <span class="p-float-label">
+      <p-dropdown inputId="dropdown" placeholder="Selecione" [options]="cidades" optionLabel="nomeCidade" [(ngModel)]='pessoa.cidade'></p-dropdown>
+  </span>
+  </div>
+  <div class="p-col-2">
+    <button pButton type="button" label="Editar" (click)="editarPessoa()"></button>
+  </div>
+  </div>
+  </div>
+
+
